@@ -8,6 +8,7 @@ const promise1 = new Promise((resolve, reject) => {
 })
 
 // #2) Run the above promise and make it console.log "success"
+promise1.then(response => console.log(response))
 
 
 // #3) Read about Promise.resolve() and Promise.reject(). How can you make
