@@ -23,16 +23,22 @@ const urls = [
 ]
 
 const getData = async function() {
-  const [ users, posts, albums ] = await Promise.all(urls.map( async function(url) {
-      const resp = await fetch(url);
-      return resp.json();
-  }));
-  console.log('users', users);
-  console.log('posta', posts);
-  console.log('albums', albums);
+  try {
+    const [ users, posts, albums ] = await Promise.all(urls.map(async function(url) {
+        const resp = await fetch(url);
+        return resp.json();
+    }));
+    console.log('users', users);
+    console.log('posta', posts);
+    console.log('albums', albums);
+  } catch (err) {
+    console.log('oooooops', err);
+  }
 }
 
-// #3)Add a try catch block to the #2 solution in order to catch any errors. // Now, use the given array containing an invalid url, so you console.log  //your error with 'oooooops'.
+// #3)Add a try catch block to the #2 solution in order to catch any errors. 
+// Now, use the given array containing an invalid url, so you console.log  
+//your error with 'oooooops'.
 const urls = [
   'https://jsonplaceholder.typicode.com/users',
   'https://jsonplaceholdeTYPO.typicode.com/posts',
