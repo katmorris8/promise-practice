@@ -20,7 +20,7 @@ const promise2 = Promise.resolve(
 )
 
 // #4) Catch this error and console log 'Ooops something went wrong'
-Promise.reject('failed')
+Promise.reject('failed').catch(console.log('Ooops something went wrong'))
 
 // #5) Use Promise.all to fetch all of these people from Star Wars (SWAPI) at the same time.
 // Console.log the output and make sure it has a catch block as well.
