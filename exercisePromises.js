@@ -31,5 +31,16 @@ const urls = [
   'https://swapi.co/api/people/4'
 ]
 
+Promise.all(urls.map(url => {
+  fetch(url).then(people => people.json())
+})
+  .then(arr => {
+    console.log('1', arr[0])
+    console.log('2', arr[1])
+    console.log('3', arr[2])
+    console.log('4', arr[3])
+  })
+  .catch(err => console.log('oh nooo', err)))
+
 // #6) Change one of your urls above to make it incorrect and fail the promise
 // does your catch block handle it?
