@@ -1,9 +1,15 @@
 // Solve the below problems:
 
 // #1) Convert the below promise into async await
-fetch('https://swapi.co/api/starships/9/')
-  .then(response => response.json())
-  .then(console.log)
+async function starships() {
+  try {
+    const resp = await fetch('https://swapi.co/api/starships/9/');
+    const data = resp.json();
+    console.log(data);
+  } catch (err) {
+    console.log('oops', err);
+  }
+}
 
 
 // #2) ADVANCED: Update the function below from the video to also have
