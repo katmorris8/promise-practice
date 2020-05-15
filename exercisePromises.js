@@ -13,7 +13,11 @@ promise1.then(response => console.log(response))
 
 // #3) Read about Promise.resolve() and Promise.reject(). How can you make
 // the above promise shorter with Promise.resolve() and console loggin "success"
-
+const promise2 = Promise.resolve(
+  setTimeout(() => {
+    console.log('success')
+  }, 4000)
+)
 
 // #4) Catch this error and console log 'Ooops something went wrong'
 Promise.reject('failed')
